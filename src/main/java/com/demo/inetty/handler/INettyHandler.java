@@ -65,6 +65,19 @@ public class INettyHandler extends SimpleChannelInboundHandler<Object>  {
         ChannelConnect.removeChannel(ctx.channel());
     }
 
+    /**
+     * 异常处理
+     *
+     * @param ctx
+     * @param cause
+     * @throws Exception
+     */
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        cause.printStackTrace();
+        ctx.close();
+    }
+
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         ctx.flush();
