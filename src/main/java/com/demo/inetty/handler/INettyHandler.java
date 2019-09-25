@@ -18,12 +18,16 @@ import static io.netty.handler.codec.http.HttpUtil.isKeepAlive;
 
 /**
  * Description: 自定义Netty处理器
+ *  <p>
+ *      ChannelInboundHandlerAdapter 改类在channelRead()方法读取消息后不会直接释放资源，适合服务端继承
+ *      SimpleChannelInboundHandler<Object> 该类是一个抽象类，自定义了channelRead0()方法，读取消息后会直接释放资源，适合客户端
+ *  </p>
  *
  * @Date 2019/9/24 16:00
  * @Author Zeti
  */
 @Slf4j
-public class INettyHandler extends SimpleChannelInboundHandler<Object>  {
+public class INettyHandler extends ChannelInboundHandlerAdapter  {
 
     private WebSocketServerHandshaker wsServerShaker;
 
@@ -35,7 +39,7 @@ public class INettyHandler extends SimpleChannelInboundHandler<Object>  {
      * @throws Exception
      */
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         if (msg instanceof FullHttpRequest) {
             //处理HTTP方式请求
             handleHttpRequest(ctx, (FullHttpRequest) msg);

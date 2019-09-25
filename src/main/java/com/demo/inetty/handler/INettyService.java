@@ -30,7 +30,8 @@ public class INettyService {
         NioEventLoopGroup workGroup = new NioEventLoopGroup();
 
         try {
-            //Netty的启动引导类,可根据需要配置
+            //Netty的启动引导类,可根据需要配置，
+            //客户端是Bootstrap类
             ServerBootstrap bootstrap = new ServerBootstrap();
             //绑定线程池
             bootstrap.group(bossGroup, workGroup);
