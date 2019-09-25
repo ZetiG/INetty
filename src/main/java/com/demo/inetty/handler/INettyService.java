@@ -31,7 +31,9 @@ public class INettyService {
 
         try {
             //Netty的启动引导类,可根据需要配置，
-            //客户端是Bootstrap类
+            // ServerBootstrap 服务端启动引导类，用来绑定本地端口
+            //根据reactor模型，需要两个EventLoopGroup 线程组类
+            //客户端是Bootstrap类, 用来连接远程主机 需要一个EventLoopGroup 线程组类
             ServerBootstrap bootstrap = new ServerBootstrap();
             //绑定线程池
             bootstrap.group(bossGroup, workGroup);
