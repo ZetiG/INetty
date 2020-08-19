@@ -46,7 +46,6 @@ public class INettyService {
             log.info("webSocket服务器启动成功：" + channel);
             channel.closeFuture().sync();
         } catch (InterruptedException e) {
-            e.printStackTrace();
             log.info("运行出错：" + e);
         } finally {
             bossGroup.shutdownGracefully();
