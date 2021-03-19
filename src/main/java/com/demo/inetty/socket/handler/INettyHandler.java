@@ -1,6 +1,6 @@
-package com.demo.inetty.handler;
+package com.demo.inetty.socket.handler;
 
-import com.demo.inetty.manager.ChannelConnect;
+import com.demo.inetty.socket.manager.ChannelConnect;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;

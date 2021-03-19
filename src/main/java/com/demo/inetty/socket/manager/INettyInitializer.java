@@ -1,6 +1,6 @@
-package com.demo.inetty.manager;
+package com.demo.inetty.socket.manager;
 
-import com.demo.inetty.handler.INettyHandler;
+import com.demo.inetty.socket.handler.INettyHandler;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.handler.codec.http.HttpObjectAggregator;

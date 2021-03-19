@@ -1,4 +1,4 @@
-package com.demo.inetty.manager;
+package com.demo.inetty.socket.manager;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelId;

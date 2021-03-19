@@ -1,1 +1,4 @@
-
+servlet:
+  one:
+   url: /firstServlet.do
+   className: com.demo.inetty.tomcat.TestServlet

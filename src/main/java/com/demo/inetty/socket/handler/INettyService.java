@@ -1,6 +1,6 @@
-package com.demo.inetty.handler;
+package com.demo.inetty.socket.handler;
 
-import com.demo.inetty.manager.INettyInitializer;
+import com.demo.inetty.socket.manager.INettyInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.nio.NioEventLoopGroup;
